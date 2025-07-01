@@ -152,6 +152,33 @@ tcp6       0      0 :::7892                 :::*                    LISTEN
 
 <br>
 
+## 配置Git代理
+
+为了让Git也能通过Clash代理进行加速，需要配置Git的代理设置。在Clash启动成功后，执行以下命令：
+
+```bash
+# 设置Git使用HTTP代理（端口7890）
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+
+# 或者设置Git使用SOCKS5代理（端口7891）
+git config --global http.proxy socks5://127.0.0.1:7891
+git config --global https.proxy socks5://127.0.0.1:7891
+```
+
+> **注意：** 
+> - 端口7890是HTTP代理端口，7891是SOCKS代理端口
+> - 建议优先使用HTTP代理，兼容性更好
+> - 如果需要取消Git代理设置，可以使用以下命令：
+>   ```bash
+>   git config --global --unset http.proxy
+>   git config --global --unset https.proxy
+>   ```
+
+配置完成后，Git操作（如clone、pull、push等）将通过Clash代理进行，可以显著提升访问GitHub等国外代码仓库的速度。
+
+<br>
+
 ## 重启程序
 
 如果需要对Clash配置进行修改，请修改 `conf/config.yaml` 文件。然后运行 `restart.sh` 脚本进行重启。
