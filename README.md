@@ -53,15 +53,22 @@
 git clone https://github.com/VocabVictor/clash-for-AutoDL.git
 ```
 
-或者尝试kgithub(GitHub镜像站)下载
+或者尝试https://ghproxy.link/(GitHub镜像站)下载
 
 ```bash
-git clone https://kkgithub.com/VocabVictor/clash-for-AutoDL.git
+git clone https://ghfast.top/https://github.com/VocabVictor/clash-for-AutoDL.git
 ```
 
 ![1.png](https://s2.loli.net/2024/06/20/8e4VzyTYZSGhPsC.png)
 
 进入到项目目录，编辑`.env`文件，修改变量`CLASH_URL`的值。
+
+
+```bash
+# 免费的clash节点
+https://www.freeclashnode.com/free-node/
+```
+
 
 ```bash
 cd clash-for-AutoDL
