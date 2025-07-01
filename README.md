@@ -101,6 +101,9 @@ cd clash-for-AutoDL
 ```bash
 apt-get update
 apt-get install lsof
+
+# 给运行权限
+chmod +x clash-for-AutoDL/restart.sh clash-for-AutoDL/shutdown.sh clash-for-AutoDL/start.sh clash-for-AutoDL/test.sh
 ```
 
 ![5.png](https://s2.loli.net/2024/06/20/otEXxVMDOrez62Q.png)
@@ -259,6 +262,46 @@ Secret忘记了，也可以上conf/config.yaml文件中查看。
 3. 程序日志中出现`error: unsupported rule type RULE-SET`报错，解决方法查看官方[WIKI](https://github.com/Dreamacro/clash/wiki/FAQ#error-unsupported-rule-type-rule-set)
 
 4. 由于独享IP和带宽的价格昂贵，AutoDL平台采用同地区的实例共享带宽方案，不对实例的网络带宽和流量进行单独计费。一个地区的带宽约为1~2Gbps，上下行带宽相等。因此，有些同学反应安装的时候下载速度太慢了。建议避开高峰时段，考虑在早上或者晚上的时段进行下载，以提高下载速度。
+
+5. **配置conda和pip使用官方源**：在AutoDL平台上，有时需要移除镜像源，使用官方源以避免包版本不一致等问题。可以使用以下命令：
+
+   **重置pip为官方源：**
+   ```bash
+   # 1. 首先查看当前pip配置和配置文件位置
+   pip config list -v
+   
+   # 2. 备份并移除系统级配置文件（最常见的情况）
+   mv /etc/pip.conf /etc/pip.conf.backup
+   
+   # 3. 同时清理用户级配置文件（如果存在）
+   rm -rf ~/.pip/pip.conf
+   rm -rf ~/.config/pip/pip.conf
+   
+   # 4. 验证配置已清除
+   pip config list
+   ```
+
+   **重置conda为官方源：**
+   ```bash
+   # 1. 查看当前配置的源
+   conda config --show channels
+   
+   # 2. 移除所有自定义源（仅在有自定义源时执行）
+   conda config --remove-key channels
+   
+   # 3. 添加官方默认源（可选）
+   conda config --add channels defaults
+   
+   # 4. 验证配置
+   conda config --show channels
+   ```
+
+   **常见问题排查：**
+   - 如果 `pip config list` 仍显示镜像源，请使用 `pip config list -v` 查看具体配置文件位置
+   - pip配置优先级：系统级(/etc/pip.conf) > 用户级(~/.pip/pip.conf) > 站点级
+   - 在AutoDL平台上，通常镜像源配置在 `/etc/pip.conf` 文件中
+
+   > **注意：** 使用官方源可能会导致下载速度较慢，建议在网络条件良好时进行。如需恢复镜像源，可将备份文件重命名回原位置。
 
 <details>
 <summary>更新日志</summary>
