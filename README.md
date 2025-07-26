@@ -43,6 +43,31 @@
 
 <br>
 
+# 环境依赖与扩展工具
+
+在使用本项目的过程中，如果你需要使用 `claude code` 等工具进行辅助开发或调试，请参考以下指南进行安装：
+
+## Node.js 安装（必需）
+
+请前往 Node.js 官网下载安装包并根据系统提示完成安装：
+
+👉 [https://nodejs.org/zh-cn/download](https://nodejs.org/zh-cn/download)
+
+安装完成后，使用以下命令验证版本：
+
+```bash
+node -v
+npm -v
+```
+
+## claude code 安装（可选）
+
+如果你需要使用 Anthropic 的 `claude code` CLI 工具，请使用以下命令全局安装：
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
 # 使用教程
 
 ## 下载项目
