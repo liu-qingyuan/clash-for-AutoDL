@@ -62,6 +62,12 @@ npm -v
 
 ## claude code 安装（可选）
 
+将 npm 的源更换为由阿里维护的淘宝镜像：
+
+```bash
+npm config set registry https://registry.npmmirror.com
+```
+
 如果你需要使用 Anthropic 的 `claude code` CLI 工具，请使用以下命令全局安装：
 
 ```bash
