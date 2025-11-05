@@ -1,0 +1,9 @@
+conf/config.yaml
+conf/cache.db
+clash.log
+.env
+logs/
+bin/
+subconverter/
+*.zip
+*.tar.gz
