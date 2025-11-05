@@ -74,6 +74,32 @@ npm config set registry https://registry.npmmirror.com
 npm install -g @anthropic-ai/claude-code
 ```
 
+## Claude Code 快速使用
+
+本项目推荐使用 `ccu` 命令快速调用 Claude Code 进行开发辅助。
+
+### 功能特性:
+- 🚀 一键切换到 minimax-m2/glm 模型
+- 🔓 自动跳过权限检查模式
+- 💬 适用于代码审查、调试和开发辅助
+
+### 使用方法:
+```bash
+# 快速启动 Claude Code（使用 minimax-m2 /glm模型，跳过权限模式）
+ccu
+
+# 在项目根目录使用，Claude Code 会自动理解项目上下文
+```
+
+### 别名配置 (在 `~/.bashrc` 中):
+```bash
+alias ccu='ccm mm; IS_SANDBOX=1 claude --dangerously-skip-permissions'
+# 或者
+alias ccu='ccm glm; IS_SANDBOX=1 claude --dangerously-skip-permissions'
+```
+
+> **注意：** 使用 `ccu` 命令前，请确保已安装 `claude-code` 和 `ccm` 工具。
+
 # 使用教程
 
 ## 下载项目
