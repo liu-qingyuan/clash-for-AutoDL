@@ -160,7 +160,10 @@ apt-get update
 apt-get install lsof
 
 # 给运行权限
-chmod +x clash-for-AutoDL/restart.sh clash-for-AutoDL/shutdown.sh clash-for-AutoDL/start.sh clash-for-AutoDL/test.sh
+chmod +x restart.sh shutdown.sh start.sh test.sh
+
+# 确保取消了学术加速
+unset http_proxy && unset https_proxy
 ```
 
 ![5.png](https://s2.loli.net/2024/06/20/otEXxVMDOrez62Q.png)
