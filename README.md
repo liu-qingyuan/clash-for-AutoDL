@@ -98,7 +98,7 @@ alias ccu='ccm mm; IS_SANDBOX=1 claude --dangerously-skip-permissions'
 alias ccu='ccm glm; IS_SANDBOX=1 claude --dangerously-skip-permissions'
 ```
 
-> **注意：** 使用 `ccu` 命令前，请确保已安装 `claude-code` 和 `Claude Code Model Switcher (CCM)` 工具。
+> **注意：** 使用 `ccu` 命令前，请确保已安装 `claude-code` 和 [`Claude Code Model Switcher (CCM)` 工具](https://github.com/foreveryh/claude-code-switch.git)。
 
 # 使用教程
 
